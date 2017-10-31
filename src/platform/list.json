@@ -1,0 +1,465 @@
+{
+	"admin": [
+		{
+			"name": "游戏更新配置",
+			"children": [],
+			"id": "update",
+			"to": "/update"
+		},
+		{
+			"name": "商店数据配置",
+			"children": [],
+			"id": "shoplist",
+			"to": "/shoplist"
+		},
+		{
+			"name": "兑换商店数据",
+			"children": [],
+			"id": "exchange",
+			"to": "/exchange"
+		},
+		{
+			"name": "提现数据配置",
+			"children": [],
+			"id": "wilist",
+			"to": "/wilist"
+		},
+		{
+			"name": "游戏配置文件",
+			"children": [],
+			"id": "config",
+			"to": "/config"
+		},
+		{
+			"name": "返利配置文件",
+			"children": [],
+			"id": "cashbackjson",
+			"to": "/cashback/json"
+		},
+		{
+			"name": "转盘数据配置",
+			"children": [],
+			"id": "lottery",
+			"to": "/lottery"
+		},
+		{
+			"name": "分享数据配置",
+			"children": [],
+			"id": "share",
+			"to": "/share"
+		},
+		{
+			"name": "文本模式配置",
+			"children": [],
+			"id": "static",
+			"to": "/static"
+		},
+		{
+			"name": "充值活动",
+			"children": [],
+			"id": "payactivity",
+			"to": "/payactivity"
+		},
+		{
+			"name": "物 品 管 理",
+			"children": [],
+			"id": "goods",
+			"to": "/goods"
+		},
+		{
+			"name": "代 理 授 权",
+			"children": [],
+			"id": "agentbind",
+			"to": "/agentbind"
+		},
+		{
+			"name": "游 戏 查 询",
+			"children": [],
+			"id": "findgame",
+			"to": "/findgame"
+		}
+	],
+	"operations": [
+		{
+			"name": "运维首页",
+			"children": [],
+			"id": "operateindex",
+			"icon":"home",
+			"to": "/operateindex"
+		},
+		{
+			"name": "代理管理",
+			"children": [
+				{
+					"name": "业绩查询",
+					"children": [],
+					"id": "querypm",
+					"to": "/querypm"
+				},
+				{
+					"name": "开通代理",
+					"children": [],
+					"id": "agentedit",
+					"to": "/agentedit"
+				},
+				{
+					"name": "代理列表",
+					"children": [],
+					"id": "agentlist",
+					"to": "/agentlist"
+				}
+			],
+			"id": "agents",
+			"icon":"fork",
+			"to": "/"
+		},
+		{
+			"name": "玩家信息",
+			"children": [],
+			"id": "playerlist",
+			"icon":"team",
+			"to": "/playerlist"
+		},
+		{
+			"name": "运营管理",
+			"children": [
+				{
+					"name": "充值统计",
+					"children": [],
+					"id": "orderstatis",
+					"to": "/orderstatis"
+				},
+				{
+					"name": "抽奖统计",
+					"children": [],
+					"id": "winning",
+					"to": "/winning"
+				},
+				{
+					"name": "代理授权",
+					"children": [],
+					"id": "agentbind",
+					"to": "/agentbind"
+				},
+				{
+					"name": "物品消耗",
+					"children": [],
+					"id": "changelist",
+					"to": "/changelist"
+				},
+				{
+					"name": "代理关系管理",
+					"children": [],
+					"id": "relation",
+					"to": "/relation"
+				},
+				{
+					"name": "提现管理",
+					"children": [],
+					"id": "withdraw",
+					"to": "/withdraw"
+				},
+				{
+					"name": "公告管理",
+					"children": [],
+					"id": "notice",
+					"to": "/notice"
+				},
+				{
+					"name": "邮件管理",
+					"children": [],
+					"id": "mail",
+					"to": "/mail"
+				}
+			],
+			"id": "yunwei",
+			"icon":"paper-clip",
+			"to": "/"
+		},
+		{
+			"name": "开通渠道",
+			"children": [],
+			"id": "addchannel",
+			"icon":"paper-clip",
+			"to": "/addchannel"
+		},
+		{
+			"name": "辅助功能",
+			"children": [
+				{
+					"name": "重置密码",
+					"children": [],
+					"id": "resetpassword",
+					"to": "/resetpassword"
+				},
+				{
+					"name": "游戏工具",
+					"children": [],
+					"id": "givesetting",
+					"to": "/givesetting"
+				}
+			],
+			"id": "assessibility",
+			"icon":"tool",
+			"to": "/"
+		},
+		{
+			"name": "个人信息",
+			"children": [
+				{
+					"name": "基础资料",
+					"children": [],
+					"id": "userinfo",
+					"to": "/userinfo"
+				},
+				{
+					"name": "修改密码",
+					"children": [],
+					"id": "alterpwd",
+					"to": "/alterpwd"
+				}
+			],
+			"id": "person",
+			"icon":"user",
+			"to": "/"
+		}
+	],
+	"agent": [
+		{
+			"name": "代理首页",
+			"children": [],
+			"id": "agemnhome",
+			"icon":"home",
+			"to": "/home"
+		},
+		{
+			"name": "业绩查询",
+			"children": [],
+			"id": "cashbackmonth",
+			"icon":"fork",
+			"to": "/cashbackmonth"
+		}
+	],
+	"channel": [
+		{
+			"name": "渠道首页",
+			"children": [],
+			"id": "operateindex",
+			"icon":"home",
+			"to": "/operateindex"
+		},
+		{
+			"name": "代理管理",
+			"children": [
+				{
+					"name": "业绩查询",
+					"children": [],
+					"id": "querypm",
+					"to": "/querypm"
+				},
+				{
+					"name": "开通代理",
+					"children": [],
+					"id": "agentedit",
+					"to": "/agentedit"
+				},
+				{
+					"name": "代理列表",
+					"children": [],
+					"id": "agentlist",
+					"to": "/agentlist"
+				}
+			],
+			"id": "agents",
+			"icon":"fork",
+			"to": "/"
+		},
+		{
+			"name": "玩家信息",
+			"children": [],
+			"id": "playerlist",
+			"icon":"team",
+			"to": "/playerlist"
+		},
+		{
+			"name": "运营管理",
+			"children": [
+				{
+					"name": "充值统计",
+					"children": [],
+					"id": "orderstatis",
+					"to": "/orderstatis"
+				},
+				{
+					"name": "抽奖统计",
+					"children": [],
+					"id": "winning",
+					"to": "/winning"
+				},
+				{
+					"name": "代理授权",
+					"children": [],
+					"id": "agentbind",
+					"to": "/agentbind"
+				},
+				{
+					"name": "物品消耗",
+					"children": [],
+					"id": "changelist",
+					"to": "/changelist"
+				},
+				{
+					"name": "代理关系管理",
+					"children": [],
+					"id": "relation",
+					"to": "/relation"
+				},
+				{
+					"name": "提现管理",
+					"children": [],
+					"id": "withdraw",
+					"to": "/withdraw"
+				},
+				{
+					"name": "公告管理",
+					"children": [],
+					"id": "notice",
+					"to": "/notice"
+				},
+				{
+					"name": "老版公告",
+					"children": [],
+					"id": "notice1",
+					"to": "/notice/0"
+				},
+				{
+					"name": "邮件管理",
+					"children": [],
+					"id": "mail",
+					"to": "/mail"
+				}
+			],
+			"id": "yunwei",
+			"icon":"paper-clip",
+			"to": "/"
+		},
+		{
+			"name": "辅助功能",
+			"children": [
+				{
+					"name": "重置密码",
+					"children": [],
+					"id": "resetpassword",
+					"to": "/resetpassword"
+				},
+				{
+					"name": "游戏工具",
+					"children": [],
+					"id": "givesetting",
+					"to": "/givesetting"
+				}
+			],
+			"id": "assessibility",
+			"icon":"tool",
+			"to": "/"
+		},
+		{
+			"name": "修改密码",
+			"children": [],
+			"id": "alterpwd",
+			"icon":"user",
+			"to": "/alterpwd"
+		}
+	],
+	"areaAgent": [
+		{
+			"name": "总代首页",
+			"children": [],
+			"id": "agemnhome",
+			"icon":"home",
+			"to": "/home"
+		},
+		{
+			"name": "代理管理",
+			"children": [
+				{
+					"name": "代理列表",
+					"children": [],
+					"id": "agentlist",
+					"to": "/agentlist"
+				},
+				{
+					"name": "开通代理",
+					"children": [],
+					"id": "agentedit",
+					"to": "/agentedit"
+				},
+				{
+					"name": "业绩查询",
+					"children": [],
+					"id": "cashbackmonth",
+					"to": "/cashbackmonth"
+				},
+				{
+					"name": "流水查询",
+					"children": [],
+					"id": "areacashbackmonth",
+					"to": "/area/cashbackmonth"
+				},
+				{
+					"name": "代理关系管理",
+					"children": [],
+					"id": "relation",
+					"to": "/relation"
+				}
+			],
+			"id": "agents",
+			"icon":"fork",
+			"to": "/"
+		}
+	],
+
+	"common": [
+		{
+			"name": "玩家信息",
+			"children": [],
+			"icon":"team",
+			"id": "playerlist",
+			"to": "/player/list"
+		},
+		{
+			"name": "充值统计",
+			"children": [],
+			"icon": "bar-chart",
+			"id": "orderstatis",
+			"to": "/orderstatis"
+		},
+		{
+			"name": "提现管理",
+			"children": [],
+			"icon":"red-envelope",
+			"id": "applywithdraw",
+			"to": "/applywithdraw"
+		},
+		{
+			"name": "个人信息",
+			"children": [
+				{
+					"name": "基础资料",
+					"children": [],
+					"id": "userinfo",
+					"to": "/userinfo"
+				},
+				{
+					"name": "修改密码",
+					"children": [],
+					"id": "alterpwd",
+					"to": "/alterpwd"
+				}
+			],
+			"id": "person",
+			"icon":"user",
+			"to": "/"
+		}
+	]
+}
