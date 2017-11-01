@@ -5,13 +5,13 @@
 
 import Login from './user/Login';
 import UserInfo from './user/UserInfo';
-
+import UserList from './user/UserList';
 import OrderInfo from './order/OrderInfo';
 
 export {
 	Login,
 	UserInfo,
-
+	UserList,
 	OrderInfo
 };
 
