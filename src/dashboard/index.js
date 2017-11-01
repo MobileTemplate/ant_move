@@ -116,7 +116,7 @@ class Dashboard extends Component {
                 <NavBar
                   mode="dark"
                   onLeftClick={this.onOpenChange}
-                  leftContent={[
+                  rightContent={[
                     <Icon type="left" key={1}/>
                   ]}>
                     千游棋牌
