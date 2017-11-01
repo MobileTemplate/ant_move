@@ -15,7 +15,6 @@ import {
 
 
 import Dashboard from './dashboard';
-import Drawer from './drawer';
 import {
 	Login,
 	UserInfo,
@@ -27,7 +26,7 @@ const Routes = () => (
 	<BrowserRouter>
 	  <Dashboard>
 		  <div style={{ height: '100%' }}>
-			<Route exact path="/" component={Drawer}/>		  
+			<Route exact path="/" component={UserList}/>		  
 			<Route exact path="/userinfo" component={UserInfo}/>
 			<Route exact path="/login" component={Login}/>
 			<Route exact path="/userlist" component={UserList}/>
