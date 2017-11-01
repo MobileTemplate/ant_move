@@ -1,0 +1,13 @@
+
+.diamond {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff ;
+}
+.card{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff ;
+}

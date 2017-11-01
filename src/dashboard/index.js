@@ -27,7 +27,7 @@ var tab_data = [
         "img": "https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg"
     },
     {
-        "title": "充值记录",
+        "title": "精品商城",
         "key": "orders",
         "to": "/order/info",
         "select_img": "https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg",
