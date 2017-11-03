@@ -15,7 +15,7 @@ import { List } from 'antd-mobile';
 
 const Item = List.Item;
 
-class UserInfo extends Component {
+class Home extends Component {
 	constructor(props, context) {
 		super(props, context);
 	}
@@ -45,4 +45,4 @@ export default connect(state => ({
     state: state.user
 }), (dispatch) => ({
     actions: bindActionCreators(action.user, dispatch)
-}))(UserInfo);
+}))(Home);

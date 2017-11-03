@@ -15,7 +15,7 @@ var tab_data = [
     {
         "title": "我的玩家",
         "key": "users",
-        "to": "/userlist",
+        "to": "/player",
         "select_img": "https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg",
         "img": "https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg"
     },
@@ -23,8 +23,8 @@ var tab_data = [
         "title": "充值流水",
         "key": "consume",
         "to": "/login",
-        "select_img": "https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg",
-        "img": "https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg"
+        "select_img": "https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg",
+        "img": "https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg"
     },
     {
         "title": "精品商城",
@@ -37,9 +37,9 @@ var tab_data = [
     {
         "title": "个人信息",
         "key": "my",
-        "to": "/userinfo",
-        "select_img": "https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg",
-        "img": "https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg"
+        "to": "/my",
+        "select_img": "https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg",
+        "img": "https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg"
     }
 ]
 
@@ -127,8 +127,6 @@ class Dashboard extends Component {
                   key={item.key}
                   selected={this.state.selectedTab === item.key}
                   onPress={() => {
-                    console.log(window.history);
-                    console.log(item.key +" == " + item.to)
                     history.push(item.to)
                     this.setState({
                         selectedTab: item.key,

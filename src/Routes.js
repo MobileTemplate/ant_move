@@ -15,19 +15,27 @@ import {
 import Dashboard from './dashboard';
 import {
 	Login,
-	UserInfo,
-	UserList,
-	OrderInfo,
+	OrderInfo
 } from './components';
+
+//我的玩家
+import {
+	Home
+} from './components/player';
+
+//我的信息
+import {
+	MyHome
+} from './components/my';
 
 const Routes = () => (
 	<BrowserRouter>
 	  <Dashboard>
 		  <div style={{ height: '100%' }}>
-			<Route exact path="/" component={UserList}/>		  
-			<Route exact path="/userinfo" component={UserInfo}/>
+			<Route exact path="/" component={Home}/>		  
+			<Route exact path="/my" component={MyHome}/>
 			<Route exact path="/login" component={Login}/>
-			<Route exact path="/userlist" component={UserList}/>
+			<Route exact path="/player" component={Home}/>
 			<Route exact path="/order/info" component={OrderInfo}/>
 		  </div>
 	  </Dashboard>

@@ -10,9 +10,9 @@ import { Carousel, Grid, WhiteSpace, Card } from 'antd-mobile';
 import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
 import action from '../../actions';
-import './user.css';
+import './player.css';
 
-class UserList extends Component {
+class Home extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
@@ -123,4 +123,4 @@ export default connect(state => ({
     state: state.user
 }), (dispatch) => ({
     actions: bindActionCreators(action.user, dispatch)
-}))(UserList);
+}))(Home);
