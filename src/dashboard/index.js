@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 import { Drawer, NavBar, List, TabBar } from 'antd-mobile';
 import {withRouter} from "react-router-dom";
 import './drawer.css';
-
+import api from '../network';
 
 var tab_data = [
     {
@@ -47,6 +47,7 @@ class Dashboard extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
+            token: false,
             open: false,
             selectedTab: tab_data[0].key,
             hidden: false,
@@ -54,11 +55,19 @@ class Dashboard extends Component {
         };
     }
     componentDidMount() {
-        
+        const {location, history} = this.props;
+        if(api.getToken() != null && api.getToken() != ""){
+            this.setState({
+                token: true
+            })
+        }
+        if (!this.state.token) {
+            if (location.pathname !== "/login") {
+                history.push("/login");
+            }
+        }
     }
     onOpenChange = () => {
-        
-        // this.setState({ open: !this.state.open });
     }
     renderContent(pageText) {
     }
@@ -108,14 +117,7 @@ class Dashboard extends Component {
             </List>
         );
         var closeCollapsed = () => {
-            // if(flag){
-            //     setTimeout(()=>{
-            //         this.setState({
-            //             collapsed: true,
-            //         });
-            //     }, 100)
-                
-            // }
+            
         }
         var tabItem = (item, i) => {
             return(
@@ -136,35 +138,39 @@ class Dashboard extends Component {
                 </TabBar.Item>
             )
         }
-
-        return(
-            <div>
-                <NavBar
-                  mode="dark"
-                  onLeftClick={this.onOpenChange}
-                  leftContent = {this.leftContent()}
-                  rightContent={this.rightContent()}>
-                </NavBar>
-                <Drawer
-                  className="my-drawer"
-                  touch={false}
-                  dragToggleDistance={0}
-                  style={{ minHeight: document.documentElement.clientHeight - 45 }}
-                  enableDragHandle
-                  sidebar={sidebar}
-                  open={this.state.open}
-                  onOpenChange={this.onOpenChange}>
-                    <TabBar
-                      unselectedTintColor="#949494"
-                      tintColor="#33A3F4"
-                      barTintColor="white"
-                      hidden={this.state.hidden}>
-                       {tab_data.map(tabItem)}
-                    </TabBar>
-                </Drawer>
-                
-            </div>
-        );
+        if(this.state.token || (api.getToken() != null && api.getToken() != "") ){
+            return(
+                <div>
+                    <NavBar
+                      mode="dark"
+                      onLeftClick={this.onOpenChange}
+                      leftContent = {this.leftContent()}
+                      rightContent={this.rightContent()}>
+                    </NavBar>
+                    <Drawer
+                      className="my-drawer"
+                      touch={false}
+                      dragToggleDistance={0}
+                      style={{ minHeight: document.documentElement.clientHeight - 45 }}
+                      enableDragHandle
+                      sidebar={sidebar}
+                      open={this.state.open}
+                      onOpenChange={this.onOpenChange}>
+                        <TabBar
+                          unselectedTintColor="#949494"
+                          tintColor="#33A3F4"
+                          barTintColor="white"
+                          hidden={this.state.hidden}>
+                           {tab_data.map(tabItem)}
+                        </TabBar>
+                    </Drawer>
+                </div>
+            );
+        }else{
+            return(
+                <div>{children}</div>
+            )
+        }
     }
 };
 

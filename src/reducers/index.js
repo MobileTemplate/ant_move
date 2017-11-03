@@ -7,7 +7,15 @@
 import { combineReducers } from 'redux';
 
 import user from './User';
+import change from './Change';
+import order from './Order';
+import message from './Message';
+import sataic from './Sataic';
 
 export default combineReducers({
-	user
+	user,
+	message,
+	change,
+	order,
+	sataic
 });
