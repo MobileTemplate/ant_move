@@ -57,14 +57,27 @@ class OrderInfo extends Component {
 		  <div
 		    style={{
 		      backgroundColor: '#ebebef',
-		      color: '#FF7F24',
-		      textAlign: 'center',
-		      height: '20px',
+		      textAlign: 'left',
+		      height: '30px',
 		      lineHeight: '20px',
 		      width: '100%',
+		      fontSize:"12px",
 		    }}
 		    {...props}
-		  >钻石大促销</div>
+		  ><Icon />热卖促销</div>
+		);
+		const PlaceHolders = props => (
+		  <div
+		    style={{
+		      backgroundColor: '#ebebef',
+		      textAlign: 'left',
+		      height: '30px',
+		      lineHeight: '20px',
+		      width: '100%',
+		      fontSize:"12px",
+		    }}
+		    {...props}
+		  ><Icon />钻石购买记录</div>
 		);
 		return (
 			<div className="orderdiv">
@@ -83,7 +96,20 @@ class OrderInfo extends Component {
 			      	<div className="sub-title">
 			      	 <PlaceHolder />
 			      	</div>	
-			      	<Grid data={data1} square={false} hasLine={false} columnNum={3} className="not-square-grid"/>
+			      	<Grid data={data1} square={false} hasLine={false} columnNum={6} className="not-square-grid"/>
+			      	<div className="sub-title">
+			      	 <PlaceHolders />
+			      	 </div>
+			      	 <Card full>
+				      <Card.Header
+				       title="钻石"
+				       extra={<a href="#">更多></a>}
+				      />
+				      <Card.Body>
+				        <div>最近一次购买</div>
+				      </Card.Body>
+				      <Card.Footer content="购买金额：￥100" extra={<div>2017-11-03 14:32:12</div>} />
+				    </Card>
 			      </div>
 			      <div className="card" style={{minHeight:'72.5vh'}} >
 			        Content of second tab
