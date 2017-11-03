@@ -6,7 +6,7 @@
 // Dashboard
 
 import React, { Component } from 'react';
-import { Drawer, NavBar, Icon, List, TabBar } from 'antd-mobile';
+import { Drawer, NavBar, List, TabBar } from 'antd-mobile';
 import {withRouter} from "react-router-dom";
 import './drawer.css';
 
@@ -20,7 +20,7 @@ var tab_data = [
         "img": "https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg"
     },
     {
-        "title": "我的流水",
+        "title": "充值流水",
         "key": "consume",
         "to": "/login",
         "select_img": "https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg",
@@ -62,6 +62,32 @@ class Dashboard extends Component {
     }
     renderContent(pageText) {
     }
+
+    leftContent(){
+        if(this.state.selectedTab === "users"){
+            return "我的玩家";
+        }else if(this.state.selectedTab === "consume"){
+            return "充值流水";
+        }else if(this.state.selectedTab === "orders"){
+            return "精品商城";
+        }else if(this.state.selectedTab === "my"){
+            return "我的";
+        }
+        return "";
+    }
+
+    rightContent(){
+        if(this.state.selectedTab === "users"){
+            return "我的玩家";
+        }else if(this.state.selectedTab === "consume"){
+            return "充值流水";
+        }else if(this.state.selectedTab === "orders"){
+            return "精品商城";
+        }else if(this.state.selectedTab === "my"){
+            return "设置";
+        }
+        return "";
+    }
     render() {
         const {children, history} = this.props;
         var arr = new Array()
@@ -94,6 +120,7 @@ class Dashboard extends Component {
         var tabItem = (item, i) => {
             return(
                 <TabBar.Item
+                  style={{padding: '0', margin: '0'}}
                   icon={{ uri: item.img }}
                   selectedIcon={{ uri: item.select_img }}
                   title={item.title}
@@ -111,15 +138,14 @@ class Dashboard extends Component {
                 </TabBar.Item>
             )
         }
+
         return(
             <div>
                 <NavBar
                   mode="dark"
                   onLeftClick={this.onOpenChange}
-                  rightContent={[
-                    <Icon type="left" key={1}/>
-                  ]}>
-                    千游棋牌
+                  leftContent = {this.leftContent()}
+                  rightContent={this.rightContent()}>
                 </NavBar>
                 <Drawer
                   className="my-drawer"

@@ -8,9 +8,7 @@
 import React from 'react';
 import {
 	BrowserRouter,
-	Router,
-	Route,
-	Link
+	Route
 } from 'react-router-dom';
 
 

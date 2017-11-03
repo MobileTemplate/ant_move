@@ -6,7 +6,7 @@
 // 用户信息
 
 import React, { Component } from 'react';
-import { Carousel, Grid, WingBlank, WhiteSpace, Card } from 'antd-mobile';
+import { Carousel, Grid, WhiteSpace, Card } from 'antd-mobile';
 import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
 import action from '../../actions';
@@ -24,24 +24,9 @@ class UserList extends Component {
     }
 	
 	render() {
-		var {state} = this.props;
-		var {login} = state;
+		// var {state} = this.props;
+		// var {login} = state;
         const hProp = this.state.initialHeight ? { height: this.state.initialHeight } : {};
-        const PlaceHolder = props => (
-            <div
-              style={{
-                backgroundColor: '#ebebef',
-                color: '#bbb',
-                textAlign: 'center',
-                height: '80px',
-                lineHeight: '80px',
-                width: '49%',
-                float: 'left',
-              }}
-             {...props}>
-                Block
-            </div>
-        );
         const data1 = [
             {
                 icon: require("./img/icon_1.png"),
@@ -62,12 +47,12 @@ class UserList extends Component {
         ];
 
         var cItem = (item, i) => {
-            var url = item
             return(
                 <a href="#" key={i} style={hProp}>
                     <img
                       src={require(`./img/tou_${i+1}.jpg`)}
                       alt=""
+                      style={{width: '100%', height: "150px"}}
                       onLoad={() => {
                         window.dispatchEvent(new Event('resize'));
                         this.setState({
@@ -87,8 +72,8 @@ class UserList extends Component {
                   style={{height: '150px'}}
                   selectedIndex={1}
                   swipeSpeed={35}
-                  beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
-                  afterChange={index => console.log('slide to', index)}>
+                  beforeChange={(from, to) => {}}
+                  afterChange={(index) => {}}>
                     {this.state.data.map(cItem)}
                 </Carousel>
                 <div style={{ padding: '5px 0' }} >
@@ -103,7 +88,7 @@ class UserList extends Component {
                           thumb={require("./img/tx_1.jpg")}
                           extra={<a className="xq" href="#">详情</a>}/>
                         <Card.Body>
-                            <div>我是张三，家住：安徽省合肥市包河区、联系电话：19090909090</div>
+                            <div>我是张三、家住：安徽省合肥市包河区、联系电话：19090909090</div>
                         </Card.Body>
                     </Card>
                     <WhiteSpace size="xs"/>
