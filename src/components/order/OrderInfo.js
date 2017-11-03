@@ -9,6 +9,7 @@ import React, { Component } from 'react';
 import { Tabs, WhiteSpace, Badge ,NoticeBar, Icon,Card,Grid} from 'antd-mobile';
 import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
+import $ from 'jquery';
 import action from '../../actions';
 import './order.css';
 
@@ -53,6 +54,54 @@ class OrderInfo extends Component {
                 text: "￥500/550钻石",
             },
         ];
+        const data2 = [
+            {
+                icon: require("../user/img/diamond/1.png"),
+                text: "￥10/10钻石",
+            },
+            {
+                icon: require("../user/img/diamond/2.png"),
+                text: "￥50/60钻石",
+            },
+            {
+                icon: require("../user/img/diamond/1.png"),
+                text: "￥100/120钻石",
+            },
+            {
+                icon: require("../user/img/diamond/2.png"),
+                text: "￥130/160钻石",
+            },
+            {
+                icon: require("../user/img/diamond/5.png"),
+                text: "￥300/400钻石",
+            }
+        ];
+        const data3 = [
+            {
+                icon: require("../user/img/fangka/1.png"),
+                text: "￥10/10房卡",
+            },
+            {
+                icon: require("../user/img/fangka/2.png"),
+                text: "￥50/60房卡",
+            },
+            {
+                icon: require("../user/img/fangka/1.png"),
+                text: "￥100/120房卡",
+            },
+            {
+                icon: require("../user/img/fangka/2.png"),
+                text: "￥130/160房卡",
+            },
+            {
+                icon: require("../user/img/fangka/5.png"),
+                text: "￥300/400房卡",
+            },
+            {
+                icon: require("../user/img/fangka/5.png"),
+                text: "￥500/550房卡",
+            },
+        ];
         const PlaceHolder = props => (
 		  <div
 		    style={{
@@ -79,6 +128,7 @@ class OrderInfo extends Component {
 		    {...props}
 		  ><Icon />钻石购买记录</div>
 		);
+
 		return (
 			<div className="orderdiv">
 			  	<NoticeBar marqueeProps={{ loop: true, style: { padding: '0 7.5px' } }}>
@@ -86,7 +136,7 @@ class OrderInfo extends Component {
 			    </NoticeBar>
 			  	<WhiteSpace />
 			    <Tabs tabs={tabs}
-			      initialPage={1}
+			      initialPage={0}
 			      onChange={(tab, index) => { console.log('onChange', index, tab); }}
 			      onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
 			    >
@@ -96,7 +146,7 @@ class OrderInfo extends Component {
 			      	<div className="sub-title">
 			      	 <PlaceHolder />
 			      	</div>	
-			      	<Grid data={data1} square={false} hasLine={false} columnNum={6} className="not-square-grid"/>
+			      	<Grid data={data2} square={false} hasLine={false} columnNum={5} className="not-square-grid"/>
 			      	<div className="sub-title">
 			      	 <PlaceHolders />
 			      	 </div>
@@ -111,8 +161,8 @@ class OrderInfo extends Component {
 				      <Card.Footer content="购买金额：￥100" extra={<div>2017-11-03 14:32:12</div>} />
 				    </Card>
 			      </div>
-			      <div className="card" style={{minHeight:'72.5vh'}} >
-			        Content of second tab
+			      <div className="card" style={{minHeight:'72.5vh'}} ><Badge text={'促'} corner>
+			        <Grid data={data3} square={false} hasLine={false} columnNum={4}  className="not-square-grid"/></Badge>
 			      </div>
 			      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '200px', backgroundColor: '#fff' }}>
 			       最新商品敬请期待~

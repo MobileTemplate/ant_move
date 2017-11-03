@@ -1,10 +1,8 @@
 
-.card{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #fff ;
-}
 .diamondlist {
   width: 100%;
 }
+/*.am-grid-text{
+	text-decoration:line-through;
+	color:red;
+}*/
