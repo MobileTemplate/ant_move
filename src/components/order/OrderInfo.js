@@ -6,7 +6,7 @@
 // 订单详情
 
 import React, { Component } from 'react';
-import { Tabs, WhiteSpace, Badge ,NoticeBar, Icon} from 'antd-mobile';
+import { Tabs, WhiteSpace, Badge ,NoticeBar, Icon,Card,Grid} from 'antd-mobile';
 import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
 import action from '../../actions';
@@ -27,8 +27,45 @@ const tabs2 = [
 
 class OrderInfo extends Component {
 	render() {
-
-		// console.log(com);
+		const data1 = [
+            {
+                icon: require("../user/img/diamond/1.png"),
+                text: "￥10/10钻石",
+            },
+            {
+                icon: require("../user/img/diamond/2.png"),
+                text: "￥50/60钻石",
+            },
+            {
+                icon: require("../user/img/diamond/1.png"),
+                text: "￥100/120钻石",
+            },
+            {
+                icon: require("../user/img/diamond/2.png"),
+                text: "￥130/160钻石",
+            },
+            {
+                icon: require("../user/img/diamond/5.png"),
+                text: "￥300/400钻石",
+            },
+            {
+                icon: require("../user/img/diamond/5.png"),
+                text: "￥500/550钻石",
+            },
+        ];
+        const PlaceHolder = props => (
+		  <div
+		    style={{
+		      backgroundColor: '#ebebef',
+		      color: '#FF7F24',
+		      textAlign: 'center',
+		      height: '20px',
+		      lineHeight: '20px',
+		      width: '100%',
+		    }}
+		    {...props}
+		  >钻石大促销</div>
+		);
 		return (
 			<div className="orderdiv">
 			  	<NoticeBar marqueeProps={{ loop: true, style: { padding: '0 7.5px' } }}>
@@ -40,8 +77,13 @@ class OrderInfo extends Component {
 			      onChange={(tab, index) => { console.log('onChange', index, tab); }}
 			      onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
 			    >
-			      <div className="diamond" style={{minHeight:'72.5vh'}}>
-			        Content of first tab
+			      <div>
+			      	 
+			        <Grid data={data1} square={false} hasLine={false} columnNum={4} className="not-square-grid"/>
+			      	<div className="sub-title">
+			      	 <PlaceHolder />
+			      	</div>	
+			      	<Grid data={data1} square={false} hasLine={false} columnNum={3} className="not-square-grid"/>
 			      </div>
 			      <div className="card" style={{minHeight:'72.5vh'}} >
 			        Content of second tab
