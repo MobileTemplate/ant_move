@@ -61,11 +61,11 @@ class Dashboard extends Component {
                 token: true
             })
         }
-        if (!this.state.token) {
-            if (location.pathname !== "/login") {
-                history.push("/login");
-            }
-        }
+        // if (!this.state.token) {
+        //     if (location.pathname !== "/login") {
+        //         history.push("/login");
+        //     }
+        // }
     }
     onOpenChange = () => {
     }
@@ -96,6 +96,19 @@ class Dashboard extends Component {
             return "设置";
         }
         return "";
+    }
+    // 判断平台端
+    IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone", "SymbianOS"];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return !flag;
     }
     render() {
         const {children, history} = this.props;
@@ -138,9 +151,10 @@ class Dashboard extends Component {
                 </TabBar.Item>
             )
         }
-        if(this.state.token || (api.getToken() != null && api.getToken() != "") ){
+        var flag = this.IsPC();
+        if(!this.state.token || (api.getToken() != null && api.getToken() != "") ){
             return(
-                <div>
+                <div style={{width: flag ? '100%' : "414px", height: flag ? '100%' : "736px", margin: "auto"}}>
                     <NavBar
                       mode="dark"
                       onLeftClick={this.onOpenChange}
@@ -168,7 +182,7 @@ class Dashboard extends Component {
             );
         }else{
             return(
-                <div>{children}</div>
+                <div style={{width: flag ? '100%' : "414px", height: flag ? '100%' : "736px", margin: "auto"}}>{children}</div>
             )
         }
     }

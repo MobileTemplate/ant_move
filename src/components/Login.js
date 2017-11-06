@@ -19,13 +19,12 @@ const Item = List.Item;
 
 class Login extends Component {
 	componentDidMount() {
-        const {actions, location, history} = this.props;
+        const {actions} = this.props;
         actions.getJson();
     }
     login(data) {
         const {actions, state} = this.props;
         this.setState({color: "black", type: null});
-        console.log(data);
         api.setHost(state.json.agent_api);
         actions.UserLogin(data, (succeed, data) => {
             if (!succeed) {
@@ -40,7 +39,6 @@ class Login extends Component {
         const {state, history, actions} = this.props;
         const {token, single} = state;
         if (token != null && single == null) {
-        	console.log(token)
             api.setToken(token.token);
             actions.getUser(token.uid);
             history.push('/player');
@@ -81,12 +79,10 @@ class Login extends Component {
 // 用户密码登录
 class LoginPass extends Component {
 	onSubmit = () => {
-
 	    this.props.form.validateFields({ force: true }, (error) => {
 	      	if (!error) {
 	      		var data = this.props.form.getFieldsValue();
 	      		this.props.callback(data);
-	        	// console.log(this.props.form.getFieldsValue());
 	      	} else {
 	        	alert('用户账号和用户密码有误！');
 	      	}

@@ -3,7 +3,7 @@
 	"is_kefu": true,
 	"channelid": 8120,
 	"icon_url": "http://uushare.qianuuu.com/qyqp/images/app.png",
-	"agent_api": "http://192.168.4.252:8506",
-	"username":"10001",
+	"agent_api": "http://test.qianuuu.cn:8506",
+	"username":"105040",
 	"password":"000000"
 }

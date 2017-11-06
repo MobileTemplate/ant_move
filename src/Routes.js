@@ -20,7 +20,8 @@ import {
 
 //我的玩家
 import {
-	Home
+	Home,
+	UserList
 } from './components/player';
 
 //我的信息
@@ -34,6 +35,7 @@ const Routes = () => (
 		  <div style={{ height: '100%' }}>
 			<Route exact path="/" component={Home}/>		  
 			<Route exact path="/my" component={MyHome}/>
+			<Route exact path="/userlist" component={UserList}/>
 			<Route exact path="/login" component={Login}/>
 			<Route exact path="/player" component={Home}/>
 			<Route exact path="/order/info" component={OrderInfo}/>

@@ -22,6 +22,13 @@ class Home extends Component {
     }
     componentDidMount() {
     }
+
+    toGrid(el, index){
+        const {history} = this.props;
+        if(el.to != null){
+            history.push(el.to);
+        } 
+    }
 	
 	render() {
 		// var {state} = this.props;
@@ -31,6 +38,7 @@ class Home extends Component {
             {
                 icon: require("./img/icon_1.png"),
                 text: "代理列表",
+                to: "/userlist"
             },
             {
                 icon: require("./img/icon_2.png"),
@@ -77,7 +85,7 @@ class Home extends Component {
                     {this.state.data.map(cItem)}
                 </Carousel>
                 <div style={{ padding: '5px 0' }} >
-                    <Grid data={data1} square={false} columnNum={2} className="not-square-grid"/>
+                    <Grid data={data1} square={false} columnNum={2} className="not-square-grid" onClick={(el, index)=>{this.toGrid(el, index)}}/>
                 </div>
                 <WhiteSpace size="sm"/>
                 <div>
