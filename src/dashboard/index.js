@@ -48,10 +48,8 @@ class Dashboard extends Component {
         super(props, context);
         this.state = {
             token: false,
-            open: false,
             selectedTab: tab_data[0].key,
-            hidden: false,
-            fullScreen: false,
+            hidden: false
         };
     }
     componentDidMount() {
@@ -61,42 +59,9 @@ class Dashboard extends Component {
                 token: true
             })
         }
-        // if (!this.state.token) {
-        //     if (location.pathname !== "/login") {
-        //         history.push("/login");
-        //     }
-        // }
-    }
-    onOpenChange = () => {
-    }
-    renderContent(pageText) {
     }
 
-    leftContent(){
-        if(this.state.selectedTab === "users"){
-            return "我的玩家";
-        }else if(this.state.selectedTab === "consume"){
-            return "充值流水";
-        }else if(this.state.selectedTab === "orders"){
-            return "精品商城";
-        }else if(this.state.selectedTab === "my"){
-            return "我的";
-        }
-        return "";
-    }
 
-    rightContent(){
-        if(this.state.selectedTab === "users"){
-            return "我的玩家";
-        }else if(this.state.selectedTab === "consume"){
-            return "充值流水";
-        }else if(this.state.selectedTab === "orders"){
-            return "精品商城";
-        }else if(this.state.selectedTab === "my"){
-            return "设置";
-        }
-        return "";
-    }
     // 判断平台端
     IsPC() {
         var userAgentInfo = navigator.userAgent;
@@ -112,26 +77,6 @@ class Dashboard extends Component {
     }
     render() {
         const {children, history} = this.props;
-        var arr = new Array()
-        arr.push(1)
-        arr.push(2)
-        const item = (item, i) => {
-            return (
-                <List.Item key={i}
-                    thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
-                    multipleLine>
-                    Category
-                </List.Item>
-            );
-        }
-        const sidebar = (
-            <List>
-                {arr.map(item)}
-            </List>
-        );
-        var closeCollapsed = () => {
-            
-        }
         var tabItem = (item, i) => {
             return(
                 <TabBar.Item
@@ -154,30 +99,14 @@ class Dashboard extends Component {
         var flag = this.IsPC();
         if(!this.state.token || (api.getToken() != null && api.getToken() != "") ){
             return(
-                <div style={{width: flag ? '100%' : "414px", height: flag ? '100%' : "736px", margin: "auto"}}>
-                    <NavBar
-                      mode="dark"
-                      onLeftClick={this.onOpenChange}
-                      leftContent = {this.leftContent()}
-                      rightContent={this.rightContent()}>
-                    </NavBar>
-                    <Drawer
-                      className="my-drawer"
-                      touch={false}
-                      dragToggleDistance={0}
-                      style={{ minHeight: document.documentElement.clientHeight - 45 }}
-                      enableDragHandle
-                      sidebar={sidebar}
-                      open={this.state.open}
-                      onOpenChange={this.onOpenChange}>
-                        <TabBar
-                          unselectedTintColor="#949494"
-                          tintColor="#33A3F4"
-                          barTintColor="white"
-                          hidden={this.state.hidden}>
-                           {tab_data.map(tabItem)}
-                        </TabBar>
-                    </Drawer>
+                <div style={{position: 'fixed', height: '100%', width: '100%', top: 0}}>
+                    <TabBar
+                      unselectedTintColor="#949494"
+                      tintColor="#33A3F4"
+                      barTintColor="white"
+                      hidden={this.state.hidden}>
+                       {tab_data.map(tabItem)}
+                    </TabBar>
                 </div>
             );
         }else{

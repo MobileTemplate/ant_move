@@ -380,20 +380,21 @@
 			"to": "/home"
 		},
 		{
-			"name": "代理管理",
+			"name": "代理列表",
+			"children": [],
+			"id": "agentlist",
+			"to": "/agentlist"
+		},
+		{
+			"name": "代理关系管理",
+			"children": [],
+			"id": "relation",
+			"to": "/relation"
+		},
+		{
+			"name": "我的业绩",
 			"children": [
-				{
-					"name": "代理列表",
-					"children": [],
-					"id": "agentlist",
-					"to": "/agentlist"
-				},
-				{
-					"name": "开通代理",
-					"children": [],
-					"id": "agentedit",
-					"to": "/agentedit"
-				},
+				
 				{
 					"name": "业绩查询",
 					"children": [],
@@ -405,12 +406,6 @@
 					"children": [],
 					"id": "areacashbackmonth",
 					"to": "/area/cashbackmonth"
-				},
-				{
-					"name": "代理关系管理",
-					"children": [],
-					"id": "relation",
-					"to": "/relation"
 				}
 			],
 			"id": "agents",

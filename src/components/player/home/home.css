@@ -1,0 +1,17 @@
+.not-square-grid .am-grid-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.xq{
+  color: #4FC3F7;
+  cursor: pointer;
+  transition: color .3s;
+}
+.xq:hover {
+  color: #90CAF9;
+}
+
+.my-list .spe .am-list-extra {
+  flex-basis: initial;
+}
