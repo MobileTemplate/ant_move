@@ -4,7 +4,7 @@
 // 
 
 import Home from './home';
-import UserList from './UserList';
+import UserList from './user';
 export {
 	Home,
 	UserList
