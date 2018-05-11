@@ -3,20 +3,26 @@
 // import * as confg from "../../public/platform/config.json";
 import * as helper from './helper';
 
+var is_login = false;
 var head_url="agent";
 // token
 export function setToken(token) {
 	helper.setToken(token);
 }
 
+// 传入是否已登录
+export function setIsLogin(is_show) {
+    is_login = is_show;
+}
+
+// 获取是否已登录
+export function getIsLogin() {
+    return is_login;
+}
+
 // 是这 host
 export function setHost(url) {
     helper.setHost(url);
-}
-
-// token
-export function getToken() {
-	return helper.getToken();
 }
 
 // 获取 JSON
@@ -25,7 +31,7 @@ export function getJson (path, url, callback) {
 }
 
 export function setUrl(url){
-    head_url=url;
+    head_url = url;
 }
 
 // 用户登录-接口

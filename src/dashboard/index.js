@@ -47,17 +47,15 @@ class Dashboard extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            token: false,
+            is_login: false,
             selectedTab: tab_data[0].key,
             hidden: false
         };
     }
-    componentDidMount() {
-        const {location, history} = this.props;
-        if(api.getToken() != null && api.getToken() != ""){
-            this.setState({
-                token: true
-            })
+    componentWillMount() {
+        const {location} = this.props;
+        if(location.pathname !== "/login" && location.pathname !== "/"){
+            this.isLogin();
         }
     }
 
@@ -75,8 +73,16 @@ class Dashboard extends Component {
         }
         return !flag;
     }
+
+    isLogin(){
+        const {history} = this.props;
+        if(!api.getIsLogin()){
+            history.push("/login")
+        }
+    }
+
     render() {
-        const {children, history} = this.props;
+        const {children, history, location} = this.props;
         var tabItem = (item, i) => {
             return(
                 <TabBar.Item
@@ -96,10 +102,13 @@ class Dashboard extends Component {
                 </TabBar.Item>
             )
         }
+        
         var flag = this.IsPC();
-        if(!this.state.token || (api.getToken() != null && api.getToken() != "") ){
+        var width = flag ? '100%' : "414px";
+        var height = flag ? '100%' : "736px";
+        if(api.getIsLogin()){
             return(
-                <div style={{position: 'fixed', height: '100%', width: '100%', top: 0}}>
+                <div style={{position: 'fixed', height: height, width: width, margin: "auto"}}>
                     <TabBar
                       unselectedTintColor="#949494"
                       tintColor="#33A3F4"
@@ -111,7 +120,7 @@ class Dashboard extends Component {
             );
         }else{
             return(
-                <div style={{width: flag ? '100%' : "414px", height: flag ? '100%' : "736px", margin: "auto"}}>{children}</div>
+                <div style={{width: width, height: height, margin: "auto"}}>{children}</div>
             )
         }
     }

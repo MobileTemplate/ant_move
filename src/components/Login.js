@@ -30,6 +30,8 @@ class Login extends Component {
             if (!succeed) {
                 this.setState({color: "red", type: data});
             } else {
+            	api.setToken(data.token);
+            	actions.getUser(data.uid);
                 this.checkLoginAndJump();
             }
         });
@@ -38,16 +40,18 @@ class Login extends Component {
     checkLoginAndJump() {
         const {state, history, actions} = this.props;
         const {token, single} = state;
-        if (token != null && single == null) {
-            api.setToken(token.token);
-            actions.getUser(token.uid);
-            history.push('/player');
+        if (token != null && single != null && token.token != null && token.token.length > 0) {
+            api.setIsLogin(true);
+            history.push('/player/home');
         }
     }
 	render() {
+		// const tabs = [
+		//   	{ title: '账号登录' },
+		//   	{ title: '短信验证码登录' },
+		// ];
 		const tabs = [
 		  	{ title: '账号登录' },
-		  	{ title: '短信验证码登录' },
 		];
 		setTimeout(() => {
             this.checkLoginAndJump()
@@ -65,9 +69,9 @@ class Login extends Component {
 			                		this.login(data)
 			                	}}/>
 	   						</div>
-					    	<div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: 200}}>
+					    	{/**<div style={{display: 'flex', alignItems: 'center', justifyContent: 'center', height: 200}}>
 			                	<LoginNoteForm/>
-					    	</div>
+					    	</div>*/}
 					    </Tabs>
 				    </div>
 			    </WingBlank>
@@ -102,6 +106,7 @@ class LoginPass extends Component {
 				<WhiteSpace/>
 				<InputItem
 				  {...getFieldProps('username', {
+				  	initialValue: '105040',
 					rules: [
 						{ required: true, message: '请输入用户账号' },
 						{ validator: this.validateAccount },
@@ -116,9 +121,11 @@ class LoginPass extends Component {
 				  placeholder="手机号/用户账号"/>
 				<WhiteSpace/>
 				<InputItem {...getFieldProps('userpass', {
+					initialValue: '000000',
 					rules: [
 						{ required: true, message: '请输入密码'},
 					],
+
 				  })}
 				  error={!!getFieldError('password')}
 				  onErrorClick={() => {

@@ -13,10 +13,6 @@ export const setToken = (token) => {
 	helper.token = token;
 };
 
-export const getToken = () => {
-	return helper.token;
-};
-
 export const setHost = (url) => {
 	helper.host = url;
 };
