@@ -11,3 +11,18 @@
 .xq:hover {
   color: #90CAF9;
 }
+
+.my-drawer {
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.my-drawer .am-drawer-sidebar {
+  	background-color: #fff;
+  	overflow: auto;
+  	-webkit-overflow-scrolling: touch;
+}
+.my-drawer .am-drawer-sidebar .am-list {
+  	width: 200px;
+  	padding: 0;
+}

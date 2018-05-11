@@ -6,7 +6,7 @@
 // 用户信息列表界面
 
 import React, { Component } from 'react';
-// import { Accordion, List, SearchBar, WhiteSpace } from 'antd-mobile';
+import { Icon } from 'antd-mobile';
 
 import TopBar from '../../comm/TopBar'
 import UserList from './UserList'
@@ -18,7 +18,8 @@ class User extends React.Component {
 			<div>
 				<TopBar
 				  onLeftClick={()=>{history.go(-1)}}
-				  leftContent = {"返回"}
+				  leftContent = {<Icon type="left" />}
+				  rightContent = "代理列表"
 				  content = {
 				  	<div>
 				  		<UserList history={this.props.history}/>

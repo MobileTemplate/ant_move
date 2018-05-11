@@ -14,11 +14,11 @@ import './comm.css';
 
 class TopBar extends Component {
 	render() {
-		const {onLeftClick, leftContent, rightContent, content} = this.props;
+		const {onLeftClick, leftContent, rightContent, content, mode} = this.props;
 		return (
 			<div>
 				<NavBar
-				  mode="dark"
+				  mode={mode != null ? mode : "dark"}
 				  onLeftClick={()=>{
 				  	if(onLeftClick != null){
 				  		onLeftClick();
