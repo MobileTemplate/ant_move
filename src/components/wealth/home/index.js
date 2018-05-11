@@ -10,6 +10,8 @@ import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
 import action from '../../../actions';
 
+import TopBar from '../../comm/TopBar';
+
 import { List } from 'antd-mobile';
 
 const Item = List.Item;
@@ -22,7 +24,14 @@ class Home extends Component {
 	}
 	render() {
 		return (
-			<div>我的财富</div>
+			<div>
+				<TopBar
+				  leftContent = {"我的财富"}
+				  content = {
+					<div>我的财富</div>
+				  }/>
+			</div>
+			
 		);
 	}
 }

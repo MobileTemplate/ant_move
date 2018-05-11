@@ -4,10 +4,8 @@
 // 
 
 import Login from './Login';
-import OrderInfo from './order/OrderInfo';
 
 export {
-	Login,
-	OrderInfo,
+	Login
 };
 

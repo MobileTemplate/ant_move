@@ -33,7 +33,7 @@ class Home extends Component {
 		return(
 			<div>
 				<TopBar
-				  leftContent = {"我的玩家"}
+				  leftContent = {"个人信息"}
 				  content = {
 					<div>
 						{this.homeView()}

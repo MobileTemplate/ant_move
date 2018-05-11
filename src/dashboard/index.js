@@ -103,10 +103,22 @@ class Dashboard extends Component {
             )
         }
         
+        var is_bottom = api.getIsLogin();
+        if(is_bottom){
+            const pathname = location.pathname;
+            const urlArr = pathname.split("/");
+            var url = "";
+            if(urlArr.length > 0){
+                var url =urlArr[urlArr.length-1];
+            }
+            if(url !== "home"){
+                is_bottom = false;
+            }
+        }
         var flag = this.IsPC();
         var width = flag ? '100%' : "414px";
         var height = flag ? '100%' : "736px";
-        if(api.getIsLogin()){
+        if(is_bottom){
             return(
                 <div style={{position: 'fixed', height: height, width: width, margin: "auto"}}>
                     <TabBar

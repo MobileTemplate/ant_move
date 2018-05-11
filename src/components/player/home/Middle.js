@@ -35,7 +35,7 @@ class Middle extends Component {
             {
                 icon: require("./img/icon_1.png"),
                 text: "代理列表",
-                to: "/userlist"
+                to: "/player/userlist"
             },
             {
                 icon: require("./img/icon_2.png"),

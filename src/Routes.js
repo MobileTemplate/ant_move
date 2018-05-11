@@ -13,9 +13,9 @@ import {
 
 
 import Dashboard from './dashboard';
+
 import {
-	Login,
-	OrderInfo
+	Login
 } from './components';
 
 //我的玩家
@@ -29,10 +29,14 @@ import {
 	MyHome
 } from './components/my';
 
-//我的信息
+//我的财富
 import {
 	WealthHome
 } from './components/wealth';
+
+import {
+	OrderhHome
+} from './components/order';
 
 const Routes = () => (
 	<BrowserRouter>
@@ -48,7 +52,7 @@ const Routes = () => (
 			<Route exact path="/wealth/home" component={WealthHome}/>
 
 			
-			<Route exact path="/order/home" component={OrderInfo}/>
+			<Route exact path="/order/home" component={OrderhHome}/>
 
 
 			<Route exact path="/my/home" component={MyHome}/>

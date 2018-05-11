@@ -31,7 +31,7 @@ class TopBar extends Component {
 				  className="my-drawer"
 				  touch={false}
 				  dragToggleDistance={0}
-				  style={{ minHeight: document.documentElement.clientHeight - 45 }}
+				  style={{ minHeight: document.documentElement.clientHeight - 95 }}
 				  enableDragHandle
 				  sidebar={""}>
 					{content}
