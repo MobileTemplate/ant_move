@@ -44,12 +44,12 @@ class Home extends Component {
 				  leftContent = {"我的玩家"}
 				  rightContent={this.PopoverView()}
 				  content = {
-				  	<div>
-				  		<Head history={this.props.history}/>
+					<div>
+						<Head history={this.props.history}/>
 						<Middle history={this.props.history}/>
 						<WhiteSpace size="sm"/>
 						<Bottom history={this.props.history}/>
-				  	</div>
+					</div>
 				  }/>
 			</div>
 		);
