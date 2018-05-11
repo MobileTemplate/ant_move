@@ -29,16 +29,30 @@ import {
 	MyHome
 } from './components/my';
 
+//我的信息
+import {
+	WealthHome
+} from './components/wealth';
+
 const Routes = () => (
 	<BrowserRouter>
 	  <Dashboard>
 		  <div style={{ height: '100%' }}>
-			<Route exact path="/" component={Home}/>		  
-			<Route exact path="/my" component={MyHome}/>
-			<Route exact path="/userlist" component={UserList}/>
+			<Route exact path="/" component={Login}/>
 			<Route exact path="/login" component={Login}/>
-			<Route exact path="/player" component={Home}/>
-			<Route exact path="/order/info" component={OrderInfo}/>
+
+
+			<Route exact path="/player/home" component={Home}/>
+			<Route exact path="/player/userlist" component={UserList}/>
+
+			<Route exact path="/wealth/home" component={WealthHome}/>
+
+			
+			<Route exact path="/order/home" component={OrderInfo}/>
+
+
+			<Route exact path="/my/home" component={MyHome}/>
+
 		  </div>
 	  </Dashboard>
 	</BrowserRouter>

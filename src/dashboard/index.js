@@ -15,21 +15,21 @@ var tab_data = [
     {
         "title": "我的玩家",
         "key": "users",
-        "to": "/player",
+        "to": "/player/home",
         "select_img": "https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg",
         "img": "https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg"
     },
     {
-        "title": "充值流水",
+        "title": "我的财富",
         "key": "consume",
-        "to": "/login",
+        "to": "/wealth/home",
         "select_img": "https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg",
         "img": "https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg"
     },
     {
         "title": "精品商城",
         "key": "orders",
-        "to": "/order/info",
+        "to": "/order/home",
         "select_img": "https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg",
         "img": "https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg"
     },
@@ -37,7 +37,7 @@ var tab_data = [
     {
         "title": "个人信息",
         "key": "my",
-        "to": "/my",
+        "to": "/my/home",
         "select_img": "https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg",
         "img": "https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg"
     }
