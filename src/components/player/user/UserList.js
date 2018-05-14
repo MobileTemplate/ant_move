@@ -12,6 +12,8 @@ import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux';
 import action from '../../../actions';
 
+import moment from 'moment';
+
 import './user.css';
 
 class UserList extends React.Component {
@@ -62,6 +64,10 @@ class UserList extends React.Component {
 			page_count = Math.ceil(data.length/this.params.pagesize);
 		}
 		data = data.slice(page_count_min, page_count_max);
+		const locale = {
+		  prevText: '上一页',
+		  nextText: '下一页',
+		};
 		return (
 			<div>
 				<SearchBar placeholder="搜索" className="search_bar" maxLength={8}  maxLength={10} onChange={
@@ -75,7 +81,8 @@ class UserList extends React.Component {
 				}/>
 				<WhiteSpace/>
 				{this.accordionList(data)}
-				<Pagination simple total={page_count} current={1} style={{ marginBottom: '16px' }} onChange={ (value)=>{this.paging(value)} } />
+				<br/>
+				<Pagination total={page_count} current={1} style={{ marginBottom: '16px' }} locale={locale} onChange={ (value)=>{this.paging(value)} } />
 			</div>
 		);
 	}
@@ -95,7 +102,7 @@ class UserList extends React.Component {
 				<List.Item key={item.id} arrow="empty"
 				  thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
 				  multipleLine
-				  extra={coin}>
+				  extra={moment(item.register_time).format('HH:mm')}>
 					{item.nick_name}
 					<List.Item.Brief>玩家ID: {item.id}</List.Item.Brief>
 				</List.Item>
