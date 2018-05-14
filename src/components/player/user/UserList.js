@@ -26,13 +26,13 @@ class UserList extends React.Component {
         };
     }
 	componentDidMount() {
-        this.select();
+        this.select(0);
     }
 
-    select(){
+    select(uid){
     	const {actions, state} = this.props;
         if (state.single != null){
-            actions.LevelUserInfo(state.single.id, 0, 0, this.params);
+            actions.LevelUserInfo(state.single.id, uid, 0, this.params);
         }
     }
     paging(pageindex){
@@ -47,10 +47,7 @@ class UserList extends React.Component {
 		if(state.level_user_info != null){
 			level_user_info = state.level_user_info;
 		}
-		var page_count = 1;
-		if(level_user_info.page_count != null && level_user_info.page_count > 0){
-			page_count = level_user_info.page_count;
-		}
+		
 		var data = [];
 		if(level_user_info.data != null){
 			data = level_user_info.data;
@@ -60,10 +57,22 @@ class UserList extends React.Component {
 		if(data.length <= page_count_max){
 			page_count_max = data.length;
 		}
+		var page_count = 1;
+		if(level_user_info.page_count != null && level_user_info.page_count > 0){
+			page_count = Math.ceil(data.length/this.params.pagesize);
+		}
 		data = data.slice(page_count_min, page_count_max);
 		return (
 			<div>
-				<SearchBar placeholder="搜索" maxLength={8} style={{backgroundColor: "#fff", borderColor: "#f5f5f5", color:"#6699ee"}}  maxLength={10}/>
+				<SearchBar placeholder="搜索" className="search_bar" maxLength={8}  maxLength={10} onChange={
+					(value)=>{
+						if(value.toString().length >= 6){
+							this.select(Number(value));
+						}else if(value.toString() == 0){
+							this.select(0);
+						}
+					}
+				}/>
 				<WhiteSpace/>
 				{this.accordionList(data)}
 				<Pagination simple total={page_count} current={1} style={{ marginBottom: '16px' }} onChange={ (value)=>{this.paging(value)} } />
@@ -76,11 +85,19 @@ class UserList extends React.Component {
 			console.log(key);
 		}
 		var item = (item, i) => {
+			var coin = item.goods.coin;
+			if(coin > 10000){
+				coin = (Math.floor(coin/10000*100)/100) + "万";
+			}else if(coin > 100000000){
+				coin = (Math.floor(coin/100000000*100)/100) + "亿";
+			}
 			return(
 				<List.Item key={item.id} arrow="empty"
 				  thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
-				  multipleLine>
-					{item.id}/{item.nick_name}
+				  multipleLine
+				  extra={coin}>
+					{item.nick_name}
+					<List.Item.Brief>玩家ID: {item.id}</List.Item.Brief>
 				</List.Item>
 			);
 		}

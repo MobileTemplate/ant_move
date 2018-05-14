@@ -33,8 +33,8 @@ class Middle extends Component {
 	render() {
 		const data1 = [
             {
-                icon: require("./img/icon_1.png"),
-                text: "代理列表",
+                icon: require("./img/icon_3.png"),
+                text: "玩家信息",
                 to: "/player/userlist"
             },
             {
@@ -42,8 +42,8 @@ class Middle extends Component {
                 text: "开通代理",
             },
             {
-                icon: require("./img/icon_3.png"),
-                text: "玩家信息",
+                icon: require("./img/icon_1.png"),
+                text: "代理列表",
             },
             {
                 icon: require("./img/icon_4.png"),
