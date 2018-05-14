@@ -29,6 +29,7 @@ class Home extends Component {
 	render() {
 		return (
 			<TopBar
+			  heigth={95}
 			  leftContent = "精品商城"
 			  content = {
 				<div className="orderdiv">

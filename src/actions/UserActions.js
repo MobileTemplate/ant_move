@@ -5,21 +5,21 @@ import * as api from '../network/Api';
 
 function setJson(data){
 	return{
-		type: types.SET_JSON,
+		type: types.USER.SET_JSON,
 		data
 	}
 }
 
 function setToken (data) {
 	return {
-		type: types.USET_SET_TOKEN,
+		type: types.USER.USET_SET_TOKEN,
 		data
 	};
 }
 
 function setSingle(data){
 	return {
-		type: types.USER_SET_SINGLE,
+		type: types.USER.USER_SET_SINGLE,
 		data
 	};
 }
@@ -70,3 +70,25 @@ export const getUser = (uid) => {
 		})();
 	};
 };
+
+//下级玩家信息
+function setLevelUserInfo(data) {
+	return{ 
+		type: types.USER.SET_LEVELUSER_INFO,
+		data
+	}
+}
+// 下级玩家信息, id 登录人ID, uid 搜索玩家ID, level 玩家等级， params 扩展参数
+export const LevelUserInfo = (id, uid, level, params) => {
+	return (dispatch,getState) => {
+		return (async () => {
+			try {
+				setTimeout(()=>dispatch(setLevelUserInfo(null)), 0);
+				const data = await api.LevelUserInfo(id, uid, level, params);
+				setTimeout(()=>dispatch(setLevelUserInfo(data)), 0);
+			} catch (e) {
+				console.log('agentLowerAgent is error: ' + e);
+			}
+		})();
+	};
+}

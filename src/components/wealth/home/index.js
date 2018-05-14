@@ -26,6 +26,7 @@ class Home extends Component {
 		return (
 			<div>
 				<TopBar
+				  heigth={95}
 				  leftContent = {"我的财富"}
 				  content = {
 					<div>我的财富</div>

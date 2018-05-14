@@ -33,6 +33,7 @@ class Home extends Component {
 		return(
 			<div>
 				<TopBar
+				  heigth={95}
 				  leftContent = {"个人信息"}
 				  content = {
 					<div>

@@ -43,3 +43,8 @@ export function UserLogin (params, callback) {
 export function GetUser (uid, callback) {
     return helper.getRequest(`/agent/${uid}/info`, null, callback);   
 };
+
+// 按等级查询下级玩家信息
+export function LevelUserInfo (id, uid, level, params) {
+    return helper.getRequest(`/agent/${id}/lower/agentinfo/${uid}/${level}`, params);
+};

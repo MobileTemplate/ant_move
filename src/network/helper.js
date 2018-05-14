@@ -42,6 +42,7 @@ const request = (url, context, callback) => {
 	let myHeaders = new Headers({
 		"Content-Type": "application/x-www-form-urlencoded"
 	});
+	console.log("url: ", url)
 	context.headers = myHeaders;
 	// 在 url 后面加 token
 	let curl = '';

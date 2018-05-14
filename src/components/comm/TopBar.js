@@ -14,7 +14,7 @@ import './comm.css';
 
 class TopBar extends Component {
 	render() {
-		const {onLeftClick, leftContent, rightContent, content, mode} = this.props;
+		const {onLeftClick, leftContent, rightContent, content, mode, heigth} = this.props;
 		return (
 			<div>
 				<NavBar
@@ -31,7 +31,7 @@ class TopBar extends Component {
 				  className="my-drawer"
 				  touch={false}
 				  dragToggleDistance={0}
-				  style={{ minHeight: document.documentElement.clientHeight - 95 }}
+				  style={{ minHeight: document.documentElement.clientHeight - heigth }}
 				  enableDragHandle
 				  sidebar={""}>
 					{content}

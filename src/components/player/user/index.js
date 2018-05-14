@@ -17,6 +17,7 @@ class User extends React.Component {
 		return (
 			<div>
 				<TopBar
+				  heigth={50}
 				  onLeftClick={()=>{history.go(-1)}}
 				  leftContent = {<Icon type="left" />}
 				  rightContent = "代理列表"

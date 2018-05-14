@@ -41,6 +41,7 @@ class Home extends Component {
 		return (
 			<div>
 				<TopBar
+				  heigth={95}
 				  leftContent = {"我的玩家"}
 				  rightContent={this.PopoverView()}
 				  content = {
