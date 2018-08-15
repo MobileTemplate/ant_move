@@ -26,3 +26,28 @@
   	width: 200px;
   	padding: 0;
 }
+
+.middle-div1 {
+  background-color: #FFF;
+  float: left;
+  text-align: center;
+}
+
+.middle-p1 {
+  margin:0px;
+  padding:0px;
+  margin-top:8px;
+  font-size:12px;
+  font-weight:100;
+  color: #F03726;
+}
+
+.middle-p2 {
+  margin:0px;
+  padding:0px;
+  margin-top: 3px;
+  margin-bottom:6px;
+  font-size:12px;
+  font-weight:100;
+  color: #000000;
+}

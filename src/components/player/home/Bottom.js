@@ -1,11 +1,4 @@
 
-//
-// Author: leafsoar
-// Date: 2017-07-25 15:01:45
-// 
-
-// 用户信息
-
 import React, { Component } from 'react';
 import { Carousel, Grid, WhiteSpace, Card } from 'antd-mobile';
 import { connect } from 'react-redux';
@@ -29,40 +22,26 @@ class Bottom extends Component {
     }
 	
 	render() {
+		const width = document.documentElement.clientWidth;
+		const width_1 = (width-4)/3;
+		const width_2 = (width-4)/2.5;
+		const width_3 = (width-6)/4;
 		return (
 			<div>
-				<Card full>
-                    <Card.Header
-					  title="张三"
-					  thumbStyle={{width:'64px',height:'64px'}}
-					  thumb={require("./img/tx_1.jpg")}
-					  extra={<a className="xq" href="#">详情</a>}/>
-					<Card.Body>
-						<div>我是张三、家住：安徽省合肥市包河区、联系电话：19090909090</div>
-					</Card.Body>
-				</Card>
-				<WhiteSpace size="xs"/>
-				<Card full>
-					<Card.Header
-					  title="李四"
-					  thumbStyle={{width:'64px',height:'64px'}}
-					  thumb={require("./img/tx_2.jpg")}
-					  extra={<a className="xq" href="#">详情</a>}/>
-					<Card.Body>
-						<div>我是李四，家住：安徽省合肥市蜀山区、联系电话：18289088908</div>
-					</Card.Body>
-				</Card>
-				<WhiteSpace size="xs" />
-				<Card full>
-					<Card.Header
-					  title="王五"
-					  thumbStyle={{width:'64px',height:'64px'}}
-					  thumb={require("./img/tx_3.jpg")}
-					  extra={<a className="xq" href="#">详情</a>}/>
-					<Card.Body>
-						<div>我是王五，家住：安徽省合肥市蜀山区、联系电话：13234255687</div>
-					</Card.Body>
-				</Card>
+				<div style={{ marginTop: 5, height:226, width: width_2, backgroundColor: "#FFF",float: "left" }}>
+				</div>
+				<div style={{ marginTop: 5, height:112, width: width-width_2-2,marginLeft:2, backgroundColor: "#FFF",float: "left" }}>
+				</div>
+				<div style={{ marginTop: 2, height:112, width: width-width_2-2,marginLeft:2, backgroundColor: "#FFF",float: "left" }}>
+				</div>
+				<div style={{ marginTop: 2, height:134, width: width_3, backgroundColor: "#FFF",float: "left" }}>
+				</div>
+				<div style={{ marginTop: 2, height:134, width: width_3,marginLeft:2, backgroundColor: "#FFF",float: "left" }}>
+				</div>
+				<div style={{ marginTop: 2, height:134, width: width_3,marginLeft:2, backgroundColor: "#FFF",float: "left" }}>
+				</div>
+				<div style={{ marginTop: 2, height:134, width: width_3,marginLeft:2, backgroundColor: "#FFF",float: "left" }}>
+				</div>
 			</div>
 		);
 	}

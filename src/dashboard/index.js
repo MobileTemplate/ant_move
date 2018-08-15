@@ -76,9 +76,9 @@ class Dashboard extends Component {
 
     isLogin(){
         const {history} = this.props;
-        if(!api.getIsLogin()){
-            history.push("/login")
-        }
+        // if(!api.getIsLogin()){
+        //     history.push("/login")
+        // }
     }
 
     render() {
@@ -118,7 +118,7 @@ class Dashboard extends Component {
         var flag = this.IsPC();
         var width = flag ? '100%' : "414px";
         var height = flag ? '100%' : "736px";
-        if(is_bottom){
+        // if(is_bottom){
             return(
                 <div style={{position: 'fixed', height: height, width: width, margin: "auto"}}>
                     <TabBar
@@ -130,11 +130,11 @@ class Dashboard extends Component {
                     </TabBar>
                 </div>
             );
-        }else{
-            return(
-                <div style={{width: width, height: height, margin: "auto"}}>{children}</div>
-            )
-        }
+        // }else{
+        //     return(
+        //         <div style={{width: width, height: height, margin: "auto"}}>{children}</div>
+        //     )
+        // }
     }
 };
 

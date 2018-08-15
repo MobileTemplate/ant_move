@@ -42,7 +42,7 @@ const Routes = () => (
 	<BrowserRouter>
 	  <Dashboard>
 		  <div style={{ height: '100%' }}>
-			<Route exact path="/" component={Login}/>
+			<Route exact path="/" component={Home}/>
 			<Route exact path="/login" component={Login}/>
 
 

@@ -17,7 +17,10 @@ import { WhiteSpace, NavBar, Drawer, Popover, Icon } from 'antd-mobile';
 import Head from './Head';
 import Middle from './Middle';
 import Bottom from './Bottom';
+import Contest from './Contest';
+import TheBottom from './TheBottom';
 import TopBar from '../../comm/TopBar';
+
 // import PopoverView from './Popover';
 
 import './home.css';
@@ -42,14 +45,18 @@ class Home extends Component {
 			<div>
 				<TopBar
 				  heigth={95}
-				  leftContent = {"我的玩家"}
+				  leftContent = {"首页"}
 				  rightContent={this.PopoverView()}
 				  content = {
 					<div>
 						<Head history={this.props.history}/>
 						<Middle history={this.props.history}/>
 						<WhiteSpace size="sm"/>
+						<Contest history={this.props.history}/>
+						<WhiteSpace size="sm"/>
 						<Bottom history={this.props.history}/>
+						<WhiteSpace size="sm"/>
+						<TheBottom history={this.props.history}/>
 					</div>
 				  }/>
 			</div>
