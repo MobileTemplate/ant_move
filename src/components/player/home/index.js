@@ -20,13 +20,12 @@ import Bottom from './Bottom';
 import Contest from './Contest';
 import TheBottom from './TheBottom';
 import TopBar from '../../comm/TopBar';
-
+import * as cs from '../../Constants'
 // import PopoverView from './Popover';
 
 import './home.css';
 
 const Item = Popover.Item;
-
 
 class Home extends Component {
     constructor(props, context) {
@@ -49,12 +48,12 @@ class Home extends Component {
 				  rightContent={this.PopoverView()}
 				  content = {
 					<div>
-						<Head history={this.props.history}/>
-						<Middle history={this.props.history}/>
+						<Head history={this.props.history} width={cs.GetWidth()} height={cs.GetHeight()}/>
+						<Middle history={this.props.history} width={cs.GetWidth()} height={cs.GetHeight()}/>
 						<WhiteSpace size="sm"/>
-						<Contest history={this.props.history}/>
+						<Contest history={this.props.history} width={cs.GetWidth()} height={cs.GetHeight()}/>
 						<WhiteSpace size="sm"/>
-						<Bottom history={this.props.history} data={{
+						<Bottom history={this.props.history} width={cs.GetWidth()} height={cs.GetHeight()} data={{
 							sj1: {
 								name: "开抢啦！",
 								money: "零食大礼包",
@@ -67,7 +66,7 @@ class Home extends Component {
 							}
 						}}/>
 						<WhiteSpace size="sm"/>
-						<TheBottom history={this.props.history} data={{
+						<TheBottom history={this.props.history} width={cs.GetWidth()} height={cs.GetHeight()} data={{
 							sj1: {
 								name: "开抢啦！",
 								money: "零食大礼包",

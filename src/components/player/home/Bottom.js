@@ -22,7 +22,7 @@ class Bottom extends Component {
     }
 	
 	render() {
-		const width = document.documentElement.clientWidth;
+		const width = this.props.width;
 		const width_1 = (width-4)/3;
 		const width_2 = (width-4)/2.5;
 		const width_3 = (width-6)/4;

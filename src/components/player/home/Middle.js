@@ -40,7 +40,7 @@ class Middle extends Component {
                 text: "代理列表",
             }
         ];
-        var width = document.documentElement.clientWidth;
+        var width = this.props.width;
         width = (width-10)/3;
 		return (
 			<div>

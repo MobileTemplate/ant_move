@@ -1,14 +1,10 @@
-//
-// Author: leafsoar
-// Date: 2017-07-25 15:39:45
-// 
-
-// Dashboard
 
 import React, { Component } from 'react';
 import { Drawer, NavBar, List, TabBar } from 'antd-mobile';
 import {withRouter} from "react-router-dom";
 import './drawer.css';
+// import * as api from '../network/Api';
+import * as cs from '../components/Constants';
 import api from '../network';
 
 var tab_data = [
@@ -100,7 +96,8 @@ class Dashboard extends Component {
                 is_bottom = false;
             }
         }
-        var flag = this.IsPC();
+        
+        var flag = cs.GetIsPC();
         var width = flag ? '100%' : "414px";
         var height = flag ? '100%' : "736px";
         // if(is_bottom){

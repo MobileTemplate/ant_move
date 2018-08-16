@@ -22,10 +22,11 @@ class TheBottom extends Component {
     }
 	
 	render() {
-		const width = document.documentElement.clientWidth;
+        const data = this.props.data;
+		const width = this.props.width;
 		const width_1 = (width-4)/3;
         const width_2 = (width-2)/2;
-        const data = this.props.data;
+        console.log(width);
 		return (
 			<div>
                 <div>
