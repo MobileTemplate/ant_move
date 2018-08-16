@@ -34,10 +34,11 @@ class Dashboard extends Component {
         };
     }
     componentWillMount() {
-        const {location} = this.props;
+        const {location, history} = this.props;
         if(location.pathname !== "/login" && location.pathname !== "/"){
             this.isLogin();
         }
+        history.push("/player/home")
     }
 
 

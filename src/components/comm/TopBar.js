@@ -13,8 +13,18 @@ import { NavBar, Drawer } from 'antd-mobile';
 import './comm.css';
 
 class TopBar extends Component {
+	constructor(props, context) {
+		super(props, context);
+		this.state = {
+			open: true,
+		}
+	}
 	render() {
-		const {onLeftClick, leftContent, rightContent, content, mode, heigth} = this.props;
+		const {onLeftClick, leftContent, rightContent, content, mode, heigth, sidebar, title} = this.props;
+		var {open} = this.props
+		if(open== null){
+			open = false
+		}
 		return (
 			<div>
 				<NavBar
@@ -26,6 +36,7 @@ class TopBar extends Component {
 				  }}
 				  leftContent = {leftContent != null ? leftContent : ""}
 				  rightContent={rightContent != null ? rightContent : ""}>
+				  {title}
 				</NavBar>
 				<Drawer
 				  className="my-drawer"
@@ -33,7 +44,9 @@ class TopBar extends Component {
 				  dragToggleDistance={0}
 				  style={{ minHeight: document.documentElement.clientHeight - heigth }}
 				  enableDragHandle
-				  sidebar={""}>
+				  open={open}
+				  sidebar={sidebar == null ? "" : sidebar}
+				  onOpenChange={this.onOpenChange}>
 					{content}
 				</Drawer>
 			</div>
