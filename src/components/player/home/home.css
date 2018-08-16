@@ -40,6 +40,7 @@
   font-size:12px;
   font-weight:100;
   color: #F03726;
+  position: relative;
 }
 
 .middle-p2 {
@@ -50,4 +51,22 @@
   font-size:12px;
   font-weight:100;
   color: #000000;
+}
+
+.bottomimg1 {
+  border: none;
+  /* width: 150px;
+  height: 150px; */
+}
+
+.bottomimg2 {
+  border: none;
+  width: 108px;
+  height: 108px;
+}
+
+.middle1 {
+  border: none;
+  width: 70px;
+  height: 70px;
 }

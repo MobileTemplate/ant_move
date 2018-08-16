@@ -13,33 +13,18 @@ import api from '../network';
 
 var tab_data = [
     {
-        "title": "我的玩家",
+        "title": "首页",
         "key": "users",
         "to": "/player/home",
-        "select_img": "https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg",
-        "img": "https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg"
+        "select_img": <span className="iconfont">&#xe607;</span>,
+        "img": <span className="iconfont">&#xe608;</span>
     },
     {
-        "title": "我的财富",
+        "title": "商城",
         "key": "consume",
         "to": "/wealth/home",
-        "select_img": "https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg",
-        "img": "https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg"
-    },
-    {
-        "title": "精品商城",
-        "key": "orders",
-        "to": "/order/home",
-        "select_img": "https://gw.alipayobjects.com/zos/rmsportal/ekLecvKBnRazVLXbWOnE.svg",
-        "img": "https://gw.alipayobjects.com/zos/rmsportal/BTSsmHkPsQSPTktcXyTV.svg"
-    },
-    
-    {
-        "title": "个人信息",
-        "key": "my",
-        "to": "/my/home",
-        "select_img": "https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg",
-        "img": "https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg"
+        "select_img": <span className="iconfont">&#xe617;</span>,
+        "img": <span className="iconfont">&#xe616;</span>
     }
 ]
 
@@ -87,8 +72,8 @@ class Dashboard extends Component {
             return(
                 <TabBar.Item
                   style={{padding: '0', margin: '0'}}
-                  icon={{ uri: item.img }}
-                  selectedIcon={{ uri: item.select_img }}
+                  icon={item.img}
+                  selectedIcon={item.select_img}
                   title={item.title}
                   key={item.key}
                   selected={this.state.selectedTab === item.key}
@@ -120,6 +105,7 @@ class Dashboard extends Component {
         var height = flag ? '100%' : "736px";
         // if(is_bottom){
             return(
+                <center>
                 <div style={{position: 'fixed', height: height, width: width, margin: "auto"}}>
                     <TabBar
                       unselectedTintColor="#949494"
@@ -129,6 +115,7 @@ class Dashboard extends Component {
                        {tab_data.map(tabItem)}
                     </TabBar>
                 </div>
+                </center>
             );
         // }else{
         //     return(

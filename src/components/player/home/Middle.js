@@ -58,17 +58,17 @@ class Middle extends Component {
                     <div className="middle-div1" style={{ width:width, height: width }}>
                         <div className="middle-p1">真的有鱼</div>
                         <div className="middle-p2">开年福利篇</div>
-                        <img src={require("./img/tj.png")} className="loginImg"/>
+                        <img src={require("./img/tj.png")} className="middle1"/>
                     </div>
                     <div className="middle-div1" style={{ width:width, height: width, marginLeft: 5 }}>
                         <div className="middle-p1">囤货过冬</div>
                         <div className="middle-p2">让爱早回家</div>
-                        <img src={require("./img/tj1.png")} className="loginImg"/>
+                        <img src={require("./img/tj1.png")} className="middle1"/>
                     </div>
                     <div className="middle-div1" style={{ width:width, height: width, marginLeft: 5 }}>
                         <div className="middle-p1">浪漫情人节</div>
                         <div className="middle-p2">甜甜蜜蜜</div>
-                        <img src={require("./img/tj2.png")} className="loginImg"/>
+                        <img src={require("./img/tj2.png")} className="middle1"/>
                     </div>
                 </div>
                 {/* <div style={{ padding: '5px 0' }} >

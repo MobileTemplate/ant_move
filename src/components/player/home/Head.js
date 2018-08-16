@@ -17,7 +17,7 @@ class Head extends Component {
     constructor(props, context) {
         super(props, context);
         this.state = {
-            data: ['', '', ''],
+            data: ['', '', '', '', ''],
             initialHeight: 80,
         };
     }
@@ -30,7 +30,7 @@ class Head extends Component {
             return(
                 <a href="#" key={i} style={hProp}>
                     <img
-                      src={require(`./img/tou_${i+1}.jpg`)}
+                      src={require(`./img/ad${i+1}.jpg`)}
                       alt=""
                       style={{width: '100%', height: "150px"}}
                       onLoad={() => {

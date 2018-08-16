@@ -54,9 +54,31 @@ class Home extends Component {
 						<WhiteSpace size="sm"/>
 						<Contest history={this.props.history}/>
 						<WhiteSpace size="sm"/>
-						<Bottom history={this.props.history}/>
+						<Bottom history={this.props.history} data={{
+							sj1: {
+								name: "开抢啦！",
+								money: "零食大礼包",
+								img: require("./img/tj.png")
+							},
+							sj2: {
+								name: "天椒麻辣牛肉条",
+								money: "¥18",
+								img: require("./img/tj.png")
+							}
+						}}/>
 						<WhiteSpace size="sm"/>
-						<TheBottom history={this.props.history}/>
+						<TheBottom history={this.props.history} data={{
+							sj1: {
+								name: "开抢啦！",
+								money: "零食大礼包",
+								img: require("./img/tj.png")
+							},
+							sj2: {
+								name: "天椒麻辣牛肉条",
+								money: "¥18",
+								img: require("./img/tj.png")
+							}
+						}}/>
 					</div>
 				  }/>
 			</div>

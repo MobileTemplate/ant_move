@@ -24,37 +24,85 @@ class TheBottom extends Component {
 	render() {
 		const width = document.documentElement.clientWidth;
 		const width_1 = (width-4)/3;
-		const width_2 = (width-2)/2;
+        const width_2 = (width-2)/2;
+        const data = this.props.data;
 		return (
 			<div>
                 <div>
                     <div style={{ marginTop: 20, height:width_2, width: width_1, backgroundColor: "#FFF",float: "left" }}>
+                        <center>
+                            <div>
+                                <p className="middle-p1">{data.sj1.name}</p>
+                                <p className="middle-p2">{data.sj1.money}</p>
+                            </div>
+                            <div style={{marginTop: width_2-26-width_1-10}}>
+                            <img style={{width: width_1 - 10}} src={data.sj1.img} className="bottomimg1"/>
+                            </div>
+                        </center>
                     </div>
                     <div style={{ marginTop: 20, height:width_2, width: width_1, marginLeft:2, backgroundColor: "#FFF",float: "left" }}>
+                        <center>
+                            <div>
+                                <p className="middle-p1">{data.sj1.name}</p>
+                                <p className="middle-p2">{data.sj1.money}</p>
+                            </div>
+                            <div style={{marginTop: width_2-26-width_1-10}}>
+                            <img style={{width: width_1 - 10}} src={data.sj1.img} className="bottomimg1"/>
+                            </div>
+                        </center>
                     </div>
                     <div style={{ marginTop: 20, height:width_2, width: width_1, marginLeft:2, backgroundColor: "#FFF",float: "left" }}>
+                        <center>
+                            <div>
+                                <p className="middle-p1">{data.sj1.name}</p>
+                                <p className="middle-p2">{data.sj1.money}</p>
+                            </div>
+                            <div style={{marginTop: width_2-26-width_1-10}}>
+                            <img style={{width: width_1 - 10}} src={data.sj1.img} className="bottomimg1"/>
+                            </div>
+                        </center>
                     </div>
                 </div>
 				<div>
                     <div style={{ marginTop: 2, height:width_1, width: width_2, backgroundColor: "#FFF",float: "left" }}>
+                        <div style={{marginLeft: 5, marginTop: 0, float: "left"}}>
+                            <p style={{width: (width_2)/2-20}} className="middle-p1">{data.sj2.name}</p>
+                            <p className="middle-p2">{data.sj2.money}</p>
+                        </div>
+                        <div style={{float: "right", marginRight: 3}}>
+                            <img src={data.sj1.img} style={{width: (width_2)/2, height: (width_2)/2, marginTop: width_1 - (width_2)/2}} className="bottomimg2"/>
+                        </div>
                     </div>
                     <div style={{ marginTop: 2, height:width_1, width: width_2, marginLeft:2, backgroundColor: "#FFF",float: "left" }}>
+                        <div style={{marginLeft: 5, marginTop: 0, float: "left"}}>
+                            <p style={{width: (width_2)/2-20}} className="middle-p1">{data.sj2.name}</p>
+                            <p className="middle-p2">{data.sj2.money}</p>
+                        </div>
+                        <div style={{float: "right", marginRight: 3}}>
+                            <img src={data.sj1.img} style={{width: (width_2)/2, height: (width_2)/2, marginTop: width_1 - (width_2)/2}} className="bottomimg2"/>
+                        </div>
                     </div>
                 </div>
                 <div>
                     <div style={{ marginTop: 2, marginBottom: 1, height:width_1, width: width_2, backgroundColor: "#FFF",float: "left" }}>
+                        <div style={{marginLeft: 5, marginTop: 0, float: "left"}}>
+                            <p style={{width: (width_2)/2-20}} className="middle-p1">{data.sj2.name}</p>
+                            <p className="middle-p2">{data.sj2.money}</p>
+                        </div>
+                        <div style={{float: "right", marginRight: 3}}>
+                            <img src={data.sj1.img} style={{width: (width_2)/2, height: (width_2)/2, marginTop: width_1 - (width_2)/2}} className="bottomimg2"/>
+                        </div>
                     </div>
                     <div style={{ marginTop: 2, marginBottom: 1, height:width_1, width: width_2, marginLeft:2, backgroundColor: "#FFF",float: "left" }}>
+                        <div style={{marginLeft: 5, marginTop: 0, float: "left"}}>
+                            <p style={{width: (width_2)/2-20}} className="middle-p1">{data.sj2.name}</p>
+                            <p className="middle-p2">{data.sj2.money}</p>
+                        </div>
+                        <div style={{float: "right", marginRight: 3}}>
+                            <img src={data.sj1.img} style={{width: (width_2)/2, height: (width_2)/2, marginTop: width_1 - (width_2)/2}} className="bottomimg2"/>
+                        </div>
                     </div>
                 </div>
-				{/* <div style={{ marginTop: 2, height:112, width: width_3,marginLeft:2, backgroundColor: "#FFF",float: "left" }}>
-				</div>
-				<div style={{ marginTop: 2, height:112, width: width_3,marginLeft:2, backgroundColor: "#FFF",float: "left" }}>
-				</div>
-				<div style={{ marginTop: 2, height:112, width: width_3,marginLeft:2, backgroundColor: "#FFF",float: "left" }}>
-				</div>
-				<div style={{ marginTop: 2, height:112, width: width_3,marginLeft:2, backgroundColor: "#FFF",float: "left" }}>
-				</div> */}
 			</div>
 		);
 	}
