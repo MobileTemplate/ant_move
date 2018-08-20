@@ -58,17 +58,17 @@ class Middle extends Component {
                     <div className="middle-div1" style={{ width:width, height: width }}>
                         <div className="middle-p1">真的有鱼</div>
                         <div className="middle-p2">开年福利篇</div>
-                        <img src={require("./img/tj.png")} className="middle1"/>
+                        <img src={"http://b317.photo.store.qq.com/psb?/V11xyACC3J6TcN/5*m8TIaUVUx1NWHPWcVO6g5go.3fZoiaisp94gqP*KI!/b/dD0BAAAAAAAA&bo=IAMgAwAAAAARFyA!&rf=viewer_4"} className="middle1"/>
                     </div>
                     <div className="middle-div1" style={{ width:width, height: width, marginLeft: 5 }}>
                         <div className="middle-p1">囤货过冬</div>
                         <div className="middle-p2">让爱早回家</div>
-                        <img src={require("./img/tj1.png")} className="middle1"/>
+                        <img src={"http://b398.photo.store.qq.com/psb?/V11xyACC3d3nEF/aaNl29KTXR2M1coocPcaBANuaU2RPYFZmCK5HU8PFjI!/m/dI4BAAAAAAAAnull&bo=7gLuAgAAAAARBzA!&rf=photolist&t=5"} className="middle1"/>
                     </div>
                     <div className="middle-div1" style={{ width:width, height: width, marginLeft: 5 }}>
                         <div className="middle-p1">浪漫情人节</div>
                         <div className="middle-p2">甜甜蜜蜜</div>
-                        <img src={require("./img/tj2.png")} className="middle1"/>
+                        <img src={"http://m.qpic.cn/psb?/V11xyACC26L6BH/B.nsgSwcSuwLN5hjPa5RyA126MG1VdqBAiqB*bZQ9po!/b/dIUBAAAAAAAA&bo=fwF6AQAAAAARBzU!&rf=viewer_4"} className="middle1"/>
                     </div>
                 </div>
                 {/* <div style={{ padding: '5px 0' }} >

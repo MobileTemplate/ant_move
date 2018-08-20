@@ -104,15 +104,15 @@ class Dashboard extends Component {
         // if(is_bottom){
             return(
                 <center>
-                <div style={{position: 'fixed', height: height, width: width, margin: "auto"}}>
-                    <TabBar
-                      unselectedTintColor="#949494"
-                      tintColor="#33A3F4"
-                      barTintColor="white"
-                      hidden={this.state.hidden}>
-                       {tab_data.map(tabItem)}
-                    </TabBar>
-                </div>
+                    <div style={{position: 'fixed', height: height, width: width, margin: "auto"}}>
+                        <TabBar
+                        unselectedTintColor="#949494"
+                        tintColor="#33A3F4"
+                        barTintColor="white"
+                        hidden={this.state.hidden}>
+                        {tab_data.map(tabItem)}
+                        </TabBar>
+                    </div>
                 </center>
             );
         // }else{
